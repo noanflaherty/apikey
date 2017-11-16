@@ -1,0 +1,35 @@
+{
+    "blue" : {
+      "color" : {"red": 10, "green": 58, "blue": 161},
+      "opacity": 255
+    },
+    "orange" : {
+      "color" : {"red": 248, "green": 135, "blue": 1},
+      "opacity": 255
+    },
+    "cloud" : {
+      "color" : {"red": 196, "green": 226, "blue": 243},
+      "opacity": 255
+    },
+    "gold" : {
+      "color" : {"red": 250, "green": 182, "blue": 1},
+      "opacity": 255
+    },
+    "grey1" : {
+      "color" : {"red": 234, "green": 234, "blue": 234},
+      "opacity": 255
+    },
+    "grey2" : {
+      "color" : {"red": 215, "green": 215, "blue": 215},
+      "opacity": 255
+    },
+    "grey3" : {
+      "color" : {"red": 165, "green": 165, "blue": 165},
+      "opacity": 255
+    },
+    "grey4" : {
+      "color" : {"red": 127, "green": 127, "blue": 127},
+      "opacity": 255
+    },
+    "default_rotation" : ["cloud", "grey3", "gold", "grey2", "orange", "blue"]
+}

@@ -57,7 +57,7 @@ class Onshape():
         '''
 
         if not os.path.isfile(creds):
-            raise IOError('%s is not a file' % creds)
+            raise IOError('{} is not a file'.format(creds))
 
         with open(creds) as f:
             try:
