@@ -1,35 +1,35 @@
 {
-    "blue" : {
-      "color" : {"red": 10, "green": 58, "blue": 161},
+    "cloud" : {
+      "color" : {"red": 196, "green": 226, "blue": 243},
+      "opacity": 255
+    },
+    "yellow" : {
+      "color" : {"red": 250, "green": 182, "blue": 1},
+      "opacity": 255
+    },
+    "light_grey" : {
+      "color" : {"red": 234, "green": 234, "blue": 234},
+      "opacity": 255
+    },
+    "medium_blue" : {
+      "color" : {"red": 157, "green": 207, "blue": 237},
       "opacity": 255
     },
     "orange" : {
       "color" : {"red": 248, "green": 135, "blue": 1},
       "opacity": 255
     },
-    "cloud" : {
-      "color" : {"red": 196, "green": 226, "blue": 243},
-      "opacity": 255
-    },
-    "gold" : {
-      "color" : {"red": 250, "green": 182, "blue": 1},
-      "opacity": 255
-    },
-    "grey1" : {
-      "color" : {"red": 234, "green": 234, "blue": 234},
-      "opacity": 255
-    },
-    "grey2" : {
-      "color" : {"red": 215, "green": 215, "blue": 215},
-      "opacity": 255
-    },
-    "grey3" : {
+    "medium_grey" : {
       "color" : {"red": 165, "green": 165, "blue": 165},
       "opacity": 255
     },
-    "grey4" : {
+    "primary_blue" : {
+      "color" : {"red": 59, "green": 97, "blue": 180},
+      "opacity": 255
+    },
+    "heavy_grey" : {
       "color" : {"red": 127, "green": 127, "blue": 127},
       "opacity": 255
     },
-    "default_rotation" : ["cloud", "grey3", "gold", "grey2", "orange", "blue"]
+    "default_rotation" : ["cloud", "yellow", "light_grey", "medium_blue", "orange", "medium_grey", "primary_blue", "heavy_grey"]
 }

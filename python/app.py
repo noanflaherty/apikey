@@ -13,8 +13,8 @@ from apikey.client import Client
 
 
 
-DOCUMENT_ID = '616b0f967b25c91af9f5b667'
-WORKSPACE_ID = '84270d5161c7f59be3bc8745'
+DOCUMENT_ID = '29db6cb01f428b5b356de161'
+WORKSPACE_ID = '24c6d96d8b0735e87c8a1267'
 
 def read_color_palette(color_palette='color_palette.json'):
 
@@ -50,9 +50,18 @@ def get_volume_of_bounding_box(bounding_box_map):
     zLen = bounding_box_map.get('highZ', 0.0) - bounding_box_map.get('lowZ', 0.0)
 
     volume = xLen * yLen * zLen
-    max_planar_surface_area = max(xLen*yLen, xLen*zLen, yLen*zLen)
 
     return volume
+
+def get_max_planar_area(bounding_box_map):
+
+    xLen = bounding_box_map.get('highX', 0.0) - bounding_box_map.get('lowX', 0.0)
+    yLen = bounding_box_map.get('highY', 0.0) - bounding_box_map.get('lowY', 0.0)
+    zLen = bounding_box_map.get('highZ', 0.0) - bounding_box_map.get('lowZ', 0.0)
+
+    max_planar_surface_area = max(xLen*yLen, xLen*zLen, yLen*zLen)
+
+    return max_planar_surface_area
 
 
 # stacks to choose from
@@ -79,14 +88,16 @@ for part in parts:
 
     bounding_box_map = c.get_part_bounding_box(DOCUMENT_ID, WORKSPACE_ID, element_id, part_id)
     bounding_box_volume = get_volume_of_bounding_box(bounding_box_map)
+    max_planar_area = get_max_planar_area(bounding_box_map)
 
     part_dict[part_id] = {
         'elementId' : element_id,
-        'boundingBoxVolume' : bounding_box_volume
+        'boundingBoxVolume' : bounding_box_volume,
+        'maxPlanarArea' : max_planar_area
     }
 
 
-ordered_part_list = sorted(part_dict, key=part_dict.get('boundingBoxVolume'), reverse=True)
+ordered_part_list = sorted(part_dict, key=part_dict.get('maxPlanarArea'), reverse=True)
 
 
 part_index = 0
