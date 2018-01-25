@@ -1,6 +1,6 @@
-# Python API Key Sample
+# Python-Based Onshape Part Coloring
 
-Simple demonstration of getting a key and structuring API calls.
+This allows you to re-color all parts within a document based on a defined set of colors. By default, it colors parts based on descending order of bounding-box size. You must provide a document ID and workspace ID.
 
 ---
 
