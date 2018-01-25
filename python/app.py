@@ -13,8 +13,10 @@ from apikey.client import Client
 
 
 
-DOCUMENT_ID = '29db6cb01f428b5b356de161'
-WORKSPACE_ID = '24c6d96d8b0735e87c8a1267'
+DOCUMENT_ID = 'ENTER_DOCUMENT_ID_HERE'
+WORKSPACE_ID = 'ENTER_WORKSPACE_ID_HERE'
+COLOR_SORTING_METHOD = 'boundingBoxVolume' # You can replace this with maxPlanarArea if you'd like.
+
 
 def read_color_palette(color_palette='color_palette.json'):
 
@@ -79,7 +81,6 @@ parts = c.list_parts(DOCUMENT_ID, WORKSPACE_ID)
 ordered_colors = read_color_palette('/Users/noaflaherty/Documents/Development/Repos/apikey/python/color_palette.json')
 
 
-
 part_dict = dict()
 
 for part in parts:
@@ -97,7 +98,7 @@ for part in parts:
     }
 
 
-ordered_part_list = sorted(part_dict, key=part_dict.get('maxPlanarArea'), reverse=True)
+ordered_part_list = sorted(part_dict, key=part_dict.get(COLOR_SORTING_METHOD), reverse=True)
 
 
 part_index = 0
@@ -110,3 +111,6 @@ for part_id in ordered_part_list:
     c.update_part_color(DOCUMENT_ID, WORKSPACE_ID, part_dict[part_id].get('elementId'), part_id, appearance)
 
     part_index += 1
+    
+    
+

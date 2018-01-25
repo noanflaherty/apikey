@@ -64,28 +64,20 @@ Just replace "ACCESS KEY" and "SECRET KEY" with the values you got from the
 developer portal. To test on other stacks, you'll create another object in the file,
 with credentials for that specific stack.
 
+To specify your color scheme:
+Open color_palette.json and add/change/delete color definitions within the dictionary. Specify the colors to be used and their default ordering within the "default_rotation" list.
+
+To specify which document and workspace to update:
+Open app.py and change the global variables DOCUMENT_ID and WORKSPACE_ID to be those of the document and workspace you'd like to update.
+
 To run the basic application:
 
 ```sh
 $ python app.py
 ```
 
-To print an STL representation of a given part studio to the console:
-
-```sh
-$ python exportstl.py
-```
-
-If you want to specify a different stack to test on, simply go into the file you're running and
-change the `stack` parameter on this line:
-
-```py
-c = Client(stack='NEW STACK HERE')
-```
 
 ### Working with API Keys
 
-For general information on our API keys and how they work, read this
-[document](https://github.com/onshape/apikey/blob/master/README.md). For general
-API support, please reach out to us at
-[api-support@onshape.com](mailto:api-support@onshape.com).
+For general information on Onshape's API keys and how they work, read this
+[document](https://github.com/onshape/apikey/blob/master/README.md).

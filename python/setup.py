@@ -8,9 +8,9 @@ except ImportError:
 config = {
     'name': 'apikey',
     'version': '1.0.0',
-    'description': 'Sample package to demonstrate using Onshape API keys',
+    'description': 'Simple script to change colors of parts in a document',
     'long_description': open('README.md').read(),
-    'author': 'Ty-Lucas Kelley',
+    'author': 'Noa Flaherty',
     'url': 'https://github.com/onshape/apikey/tree/master/python',
     'license': open('LICENSE').read(),
     'packages': [
