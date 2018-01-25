@@ -13,8 +13,8 @@ from apikey.client import Client
 
 
 
-DOCUMENT_ID = 'cfee2bec1e5acb4e45c21c34'
-WORKSPACE_ID = '9f2dcf37088ecb5ae5d4e9a0'
+DOCUMENT_ID = 'ENTER_DOCUMENT_ID_HERE'
+WORKSPACE_ID = 'ENTER_WORKSPACE_ID_HERE'
 COLOR_SORTING_METHOD = 'boundingBoxVolume' # You can replace this with maxPlanarArea if you'd like.
 
 
