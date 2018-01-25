@@ -7,14 +7,14 @@ Demos basic usage of the Onshape API
 import pprint as pp
 import os
 import json
-
+import sys
 
 from apikey.client import Client
 
 
 
-DOCUMENT_ID = 'ENTER_DOCUMENT_ID_HERE'
-WORKSPACE_ID = 'ENTER_WORKSPACE_ID_HERE'
+DOCUMENT_ID = 'cfee2bec1e5acb4e45c21c34'
+WORKSPACE_ID = '9f2dcf37088ecb5ae5d4e9a0'
 COLOR_SORTING_METHOD = 'boundingBoxVolume' # You can replace this with maxPlanarArea if you'd like.
 
 
@@ -72,13 +72,14 @@ stacks = {
 }
 
 # create instance of the onshape client; change key to test on another stack
-c = Client(stack=stacks['cad'], creds='/Users/noaflaherty/Documents/Development/Repos/apikey/python/creds.json', logging=True)
+path = os.path.dirname(sys.argv[0]) 
+c = Client(stack=stacks['cad'], creds='{}/creds.json'.format(path), logging=True)
 
 
 # get the document details
 parts = c.list_parts(DOCUMENT_ID, WORKSPACE_ID)
 
-ordered_colors = read_color_palette('/Users/noaflaherty/Documents/Development/Repos/apikey/python/color_palette.json')
+ordered_colors = read_color_palette('{}/color_palette.json'.format(path))
 
 
 part_dict = dict()
